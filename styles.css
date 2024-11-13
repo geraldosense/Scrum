@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('lionel-messi-barcelona-3261.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(135deg, 
+                rgba(44, 62, 80, 0.1), 
+                rgba(52, 152, 219, 0.1));
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    backdrop-filter: blur(5px);
+}
+
+header h1 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #3498db;
+}
+
+nav ul {
+    list-style: none;
+    padding: 1rem 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+nav ul li a:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 4rem;
+}
+
+h2 {
+    color: #ffffff;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #3498db;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.periferico-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(221, 221, 221, 0.3);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.periferico-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.periferico-card h3 {
+    color: #1a2634;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.periferico-card h4 {
+    color: #2980b9;
+    margin: 1.5rem 0 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.periferico-card p {
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.periferico-card ul {
+    list-style-position: inside;
+    margin-left: 1rem;
+}
+
+.periferico-card ul li {
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.periferico-card ul ul {
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+footer {
+    background: linear-gradient(135deg, 
+                rgba(44, 62, 80, 0.9), 
+                rgba(52, 152, 219, 0.9));
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    backdrop-filter: blur(5px);
+}
+
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+    
+    .periferico-card {
+        padding: 1.5rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+} 
