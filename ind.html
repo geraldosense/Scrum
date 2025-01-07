@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História de Angola</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>História de Angola</h1>
+    </header>
+
+    <!-- Página inicial com os temas -->
+    <div class="temas-container" id="temas-page">
+        <div class="tema-card" onclick="mostrarConteudo('geografia')">
+            <h2>Geografia</h2>
+            <p>Território, clima e demografia de Angola</p>
+        </div>
+
+        <div class="tema-card" onclick="mostrarConteudo('pre-colonial')">
+            <h2>Período Pré-Colonial</h2>
+            <p>História dos primeiros povos e reinos</p>
+        </div>
+
+        <div class="tema-card" onclick="mostrarConteudo('colonial')">
+            <h2>Período Colonial</h2>
+            <p>A era da colonização portuguesa</p>
+        </div>
+
+        <div class="tema-card" onclick="mostrarConteudo('independencia')">
+            <h2>Independência</h2>
+            <p>A luta pela libertação e independência</p>
+        </div>
+
+        <div class="tema-card" onclick="mostrarConteudo('cultura')">
+            <h2>Cultura</h2>
+            <p>Manifestações culturais e tradições</p>
+        </div>
+
+        <div class="tema-card" onclick="mostrarConteudo('economia')">
+            <h2>Economia</h2>
+            <p>Recursos e desenvolvimento econômico</p>
+        </div>
+    </div>
+
+    <!-- Conteúdos específicos (inicialmente ocultos) -->
+    <div class="conteudo-container" id="conteudo-page" style="display: none;">
+        <button onclick="voltarTemas()" class="btn-voltar">← Voltar aos Temas</button>
+        
+        <!-- Conteúdos específicos de cada tema aqui -->
+        <div id="geografia-conteudo" class="tema-conteudo">
+            <!-- Conteúdo de Geografia -->
+        </div>
+
+        <!-- Repita para outros temas -->
+    </div>
+
+    <script>
+        function mostrarConteudo(tema) {
+            document.getElementById('temas-page').style.display = 'none';
+            document.getElementById('conteudo-page').style.display = 'block';
+            
+            // Ocultar todos os conteúdos
+            const conteudos = document.getElementsByClassName('tema-conteudo');
+            for(let conteudo of conteudos) {
+                conteudo.style.display = 'none';
+            }
+            
+            // Mostrar apenas o conteúdo selecionado
+            document.getElementById(tema + '-conteudo').style.display = 'block';
+        }
+
+        function voltarTemas() {
+            document.getElementById('temas-page').style.display = 'grid';
+            document.getElementById('conteudo-page').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
