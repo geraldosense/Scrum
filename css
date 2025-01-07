@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periféricos de Computador - Guia Completo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Guia Completo de Periféricos de Computador</h1>
+        <nav>
+            <ul>
+                <li><a href="#entrada">Dispositivos de Entrada</a></li>
+                <li><a href="#saida">Dispositivos de Saída</a></li>
+                <li><a href="#entrada-saida">Dispositivos de Entrada/Saída</a></li>
+                <li><a href="#armazenamento">Dispositivos de Armazenamento</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Seção de Introdução -->
+        <section class="introducao">
+            <h2>O que são Periféricos?</h2>
+            <p>Periféricos são dispositivos que se conectam ao computador para expandir suas funcionalidades, permitindo a entrada, saída ou armazenamento de dados. São essenciais para a interação entre usuário e máquina.</p>
+        </section>
+
+        <!-- Dispositivos de Entrada -->
+        <section id="entrada" class="categoria">
+            <h2>Dispositivos de Entrada</h2>
+            <p>São responsáveis por enviar informações do mundo exterior para o computador.</p>
+
+            <div class="dispositivo">
+                <h3>Teclado</h3>
+                <div class="conteudo">
+                    <div class="descricao">
+                        <h4>Características Principais:</h4>
+                        <ul>
+                            <li>Layout QWERTY/AZERTY</li>
+                            <li>104/105 teclas padrão</li>
+                            <li>Conexão USB/PS2/Bluetooth</li>
+                            <li>Tecnologia Anti-ghosting</li>
+                        </ul>
+                    </div>
+                    <div class="tipos">
+                        <h4>Tipos:</h4>
+                        <ul>
+                            <li>Mecânico
+                                <ul>
+                                    <li>Switch Cherry MX (Red, Blue, Brown)</li>
+                                    <li>Durabilidade: 50-100 milhões de cliques</li>
+                                    <li>Feedback tátil e sonoro</li>
+                                </ul>
+                            </li>
+                            <li>Membrana
+                                <ul>
+                                    <li>Mais silencioso</li>
+                                    <li>Menor custo</li>
+                                    <li>Durabilidade: 5-10 milhões de cliques</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dispositivo">
+                <h3>Mouse</h3>
+                <div class="conteudo">
+                    <div class="descricao">
+                        <h4>Especificações Técnicas:</h4>
+                        <ul>
+                            <li>DPI: 400 a 25.600</li>
+                            <li>Polling Rate: 125Hz a 8000Hz</li>
+                            <li>Sensores: Óptico ou Laser</li>
+                            <li>Botões programáveis</li>
+                        </ul>
+                    </div>
+                    <div class="aplicacoes">
+                        <h4>Aplicações Específicas:</h4>
+                        <ul>
+                            <li>Gaming
+                                <ul>
+                                    <li>Alto DPI</li>
+                                    <li>Baixa latência</li>
+                                    <li>Múltiplos botões</li>
+                                </ul>
+                            </li>
+                            <li>Design/CAD
+                                <ul>
+                                    <li>Precisão elevada</li>
+                                    <li>Controles extras</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dispositivo">
+                <h3>Scanner</h3>
+                <div class="conteudo">
+                    <div class="descricao">
+                        <h4>Características:</h4>
+                        <ul>
+                            <li>Resolução: 300 a 9600 DPI</li>
+                            <li>Profundidade de cor: 24/48 bits</li>
+                            <li>Área de digitalização</li>
+                            <li>Velocidade de digitalização</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dispositivos de Saída -->
+        <section id="saida" class="categoria">
+            <h2>Dispositivos de Saída</h2>
+            
+            <div class="dispositivo">
+                <h3>Monitor</h3>
+                <div class="conteudo">
+                    <div class="especificacoes">
+                        <h4>Especificações:</h4>
+                        <ul>
+                            <li>Resolução: HD a 8K</li>
+                            <li>Taxa de atualização: 60Hz a 360Hz</li>
+                            <li>Tempo de resposta: 0.5ms a 5ms</li>
+                            <li>Tecnologias: HDR, FreeSync, G-Sync</li>
+                        </ul>
+                    </div>
+                    <div class="tecnologias">
+                        <h4>Tipos de Painel:</h4>
+                        <ul>
+                            <li>IPS: Melhor cor e ângulo de visão</li>
+                            <li>VA: Melhor contraste</li>
+                            <li>TN: Menor latência</li>
+                            <li>OLED: Contraste infinito</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dispositivo">
+                <h3>Impressora</h3>
+                <div class="conteudo">
+                    <div class="tipos">
+                        <h4>Tecnologias:</h4>
+                        <ul>
+                            <li>Jato de Tinta
+                                <ul>
+                                    <li>Resolução: até 5760x1440 dpi</li>
+                                    <li>Ideal para fotos</li>
+                                </ul>
+                            </li>
+                            <li>Laser
+                                <ul>
+                                    <li>Velocidade: 20-100 ppm</li>
+                                    <li>Ideal para documentos</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dispositivos de Entrada/Saída -->
+        <section id="entrada-saida" class="categoria">
+            <h2>Dispositivos de Entrada/Saída</h2>
+            
+            <div class="dispositivo">
+                <h3>Placa de Rede</h3>
+                <div class="conteudo">
+                    <div class="especificacoes">
+                        <h4>Características:</h4>
+                        <ul>
+                            <li>Velocidades: 10/100/1000/2500/10000 Mbps</li>
+                            <li>Wi-Fi: 802.11 a/b/g/n/ac/ax</li>
+                            <li>Bluetooth: 4.0 a 5.3</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dispositivos de Armazenamento -->
+        <section id="armazenamento" class="categoria">
+            <h2>Dispositivos de Armazenamento</h2>
+            
+            <div class="dispositivo">
+                <h3>SSD Externo</h3>
+                <div class="conteudo">
+                    <div class="especificacoes">
+                        <h4>Características:</h4>
+                        <ul>
+                            <li>Velocidades: até 2000MB/s</li>
+                            <li>Interfaces: USB 3.2, Thunderbolt</li>
+                            <li>Capacidades: 250GB a 4TB</li>
+                            <li>Tecnologias: NVMe, SATA</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Desenvolvido para estudo de Periféricos de Computador</p>
+    </footer>
+</body>
+</html>
