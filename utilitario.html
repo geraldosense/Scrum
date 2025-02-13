@@ -1,1 +1,190 @@
- 
+<!-- Quadro de Introdução -->
+<div class="introducao-container">
+    <div class="intro-header">
+        <h2>Introdução aos Utilitários</h2>
+        <div class="linha-decorativa"></div>
+    </div>
+    
+    <div class="intro-content">
+        <div class="intro-text">
+            <h3>O que são Utilitários de Software?</h3>
+            <p>Utilitários de software são ferramentas especializadas projetadas para realizar tarefas específicas de manutenção, otimização e proteção de sistemas computacionais.</p>
+            
+            <div class="categorias-section">
+                <h3>Categorias Principais:</h3>
+                <div class="categorias-grid">
+                    <div class="categoria-item">
+                        <h4>Segurança e Proteção</h4>
+                        <ul>
+                            <li>Antivírus e antimalware</li>
+                            <li>Firewalls e VPNs</li>
+                            <li>Ferramentas de criptografia</li>
+                        </ul>
+                    </div>
+
+                    <div class="categoria-item">
+                        <h4>Manutenção do Sistema</h4>
+                        <ul>
+                            <li>Otimizadores de desempenho</li>
+                            <li>Limpeza de registro</li>
+                            <li>Gerenciadores de disco</li>
+                        </ul>
+                    </div>
+
+                    <div class="categoria-item">
+                        <h4>Backup e Recuperação</h4>
+                        <ul>
+                            <li>Ferramentas de backup</li>
+                            <li>Recuperação de dados</li>
+                            <li>Clonagem de sistema</li>
+                        </ul>
+                    </div>
+
+                    <div class="categoria-item">
+                        <h4>Compressão e Gerenciamento</h4>
+                        <ul>
+                            <li>Compactadores de arquivo</li>
+                            <li>Gerenciadores de download</li>
+                            <li>Organizadores de arquivos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="intro-imagem">
+            <img src="https://img.freepik.com/free-vector/computer-technology-isometric-concept_1284-17390.jpg" alt="Utilitários de Software">
+        </div>
+    </div>
+</div>
+
+<style>
+    .introducao-container {
+        background: linear-gradient(135deg, 
+            rgba(25, 35, 55, 0.95) 0%, 
+            rgba(40, 65, 90, 0.95) 100%);
+        margin: 40px auto;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        max-width: 1200px;
+    }
+
+    .intro-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .intro-header h2 {
+        font-size: 2.4em;
+        color: #ffffff;
+        margin-bottom: 15px;
+    }
+
+    .linha-decorativa {
+        height: 3px;
+        width: 150px;
+        background: linear-gradient(90deg, transparent, #4a90e2, transparent);
+        margin: 0 auto;
+    }
+
+    .intro-content {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        gap: 40px;
+        align-items: start;
+    }
+
+    .intro-text h3 {
+        color: #4a90e2;
+        font-size: 1.6em;
+        margin-bottom: 20px;
+    }
+
+    .intro-text p {
+        color: #ffffff;
+        line-height: 1.8;
+        margin-bottom: 30px;
+        font-size: 1.1em;
+    }
+
+    .categorias-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        margin-top: 20px;
+    }
+
+    .categoria-item {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 20px;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    .categoria-item:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    .categoria-item h4 {
+        color: #4a90e2;
+        margin-bottom: 15px;
+        font-size: 1.2em;
+    }
+
+    .categoria-item ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .categoria-item ul li {
+        color: #d0d0d0;
+        margin: 8px 0;
+        padding-left: 20px;
+        position: relative;
+    }
+
+    .categoria-item ul li::before {
+        content: "•";
+        color: #4a90e2;
+        position: absolute;
+        left: 0;
+    }
+
+    .intro-imagem img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+    }
+
+    .intro-imagem img:hover {
+        transform: scale(1.05);
+    }
+
+    @media (max-width: 968px) {
+        .intro-content {
+            grid-template-columns: 1fr;
+        }
+
+        .intro-imagem {
+            order: -1;
+        }
+
+        .categorias-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .introducao-container {
+            padding: 30px;
+            margin: 20px;
+        }
+
+        .intro-header h2 {
+            font-size: 2em;
+        }
+    }
+</style>

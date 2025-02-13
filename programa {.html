@@ -1,0 +1,32 @@
+programa {
+    funcao inicio() {
+        // Declaração de variáveis
+        real nota1, nota2, nota3, media
+        cadeia nome // Declaração da variável para o nome do aluno
+        
+        // Entrada de dados
+        escreva("Nome do aluno: ")
+        leia(nome)
+        
+        escreva("Digite a primeira nota: ")
+        leia(nota1)
+        
+        escreva("Digite a segunda nota: ")
+        leia(nota2)
+        
+        escreva("Digite a terceira nota: ")
+        leia(nota3)
+        
+        // Cálculo da média
+        media = (nota1 + nota2 + nota3) / 3
+        
+        // Saída e verificação
+        escreva("A média do aluno ", nome, " é: ", media, "\n")
+        
+        se (media >= 7) {
+            escreva("Parabéns, ", nome, "! Você foi aprovado.\n")
+        } senao {
+            escreva("Infelizmente, ", nome, ", você foi reprovado.\n")
+        }
+    }
+}

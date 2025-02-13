@@ -1,160 +1,56 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História do Python</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>A História da Linguagem Python</h1>
+        
+        <section class="origem">
+            <h2>Origem</h2>
+            <p>Python foi criada por Guido van Rossum e foi lançada pela primeira vez em 1991. O desenvolvimento começou no final dos anos 1980 no Centro de Matemática e Informática (CWI) nos Países Baixos.</p>
+        </section>
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg') no-repeat center center fixed;
-    background-size: cover;
-    min-height: 100vh;
-}
+        <section class="nome">
+            <h2>A Origem do Nome</h2>
+            <p>O nome Python não vem da cobra, mas sim do grupo de comédia britânico Monty Python, do qual Guido van Rossum era fã.</p>
+        </section>
 
-header {
-    background: linear-gradient(135deg, 
-                rgba(255, 215, 0, 0.7),  /* Amarelo transparente */
-                rgba(255, 215, 0, 0.5));
-    color: black;
-    padding: 2rem;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    backdrop-filter: blur(5px);
-}
+        <section class="evolucao">
+            <h2>Evolução da Linguagem</h2>
+            <ul>
+                <li><strong>Python 1.0 (1994):</strong> Primeira versão oficial</li>
+                <li><strong>Python 2.0 (2000):</strong> Introduziu list comprehensions e garbage collection</li>
+                <li><strong>Python 3.0 (2008):</strong> Maior atualização, com mudanças significativas na linguagem</li>
+            </ul>
+        </section>
 
-.temas-container {
-    display: flex;
-    overflow-x: auto;
-    padding: 2rem;
-    gap: 2rem;
-    margin: 2rem 0;
-}
+        <section class="caracteristicas">
+            <h2>Características Principais</h2>
+            <ul>
+                <li>Sintaxe clara e legível</li>
+                <li>Multiplataforma</li>
+                <li>Linguagem interpretada</li>
+                <li>Forte tipagem dinâmica</li>
+                <li>Orientada a objetos</li>
+            </ul>
+        </section>
 
-.tema-card {
-    background: rgba(255, 215, 0, 0.6); /* Amarelo transparente */
-    min-width: 300px;
-    max-width: 400px;
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    backdrop-filter: blur(5px);
-    position: relative;
-    padding-bottom: 60px; /* Espaço para o botão */
-}
-
-.tema-card h2 {
-    color: #000;
-    margin-bottom: 1rem;
-    font-size: 1.8rem;
-    text-align: center;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-    padding-bottom: 0.5rem;
-}
-
-.tema-card ul {
-    list-style-position: inside;
-    margin-left: 1rem;
-}
-
-.tema-card ul li {
-    margin-bottom: 0.5rem;
-    color: #000;
-}
-
-.tema-card ul ul {
-    margin-left: 2rem;
-}
-
-/* Estilização da barra de rolagem horizontal */
-.temas-container::-webkit-scrollbar {
-    height: 8px;
-}
-
-.temas-container::-webkit-scrollbar-track {
-    background: rgba(255, 215, 0, 0.2);
-    border-radius: 4px;
-}
-
-.temas-container::-webkit-scrollbar-thumb {
-    background: rgba(255, 215, 0, 0.7);
-    border-radius: 4px;
-} 
-
-.btn-detalhes {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 20px;
-    background: rgba(204, 23, 23, 0.8); /* Vermelho da bandeira */
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: all 0.3s ease;
-}
-
-.btn-detalhes:hover {
-    background: rgba(204, 23, 23, 1);
-    transform: translateX(-50%) scale(1.05);
-}
-
-.btn-detalhes .icon {
-    font-size: 1.2em;
-    transition: transform 0.3s ease;
-}
-
-.btn-detalhes:hover .icon {
-    transform: translateX(5px);
-}
-
-.conteudo-detalhado {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-.detalhe-card {
-    background: rgba(255, 215, 0, 0.6);
-    border-radius: 15px;
-    margin-bottom: 2rem;
-    padding: 2rem;
-}
-
-.conteudo {
-    display: flex;
-    gap: 2rem;
-    margin-top: 1rem;
-}
-
-.conteudo img {
-    width: 300px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.btn-voltar {
-    position: absolute;
-    left: 20px;
-    top: 20px;
-    padding: 10px 20px;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.btn-voltar:hover {
-    background: rgba(0, 0, 0, 0.9);
-}
+        <section class="aplicacoes">
+            <h2>Aplicações Modernas</h2>
+            <p>Hoje, Python é amplamente utilizada em:</p>
+            <ul>
+                <li>Desenvolvimento Web</li>
+                <li>Inteligência Artificial</li>
+                <li>Ciência de Dados</li>
+                <li>Automação</li>
+                <li>IoT (Internet das Coisas)</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
