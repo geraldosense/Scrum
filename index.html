@@ -1,760 +1,294 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metodologia Scrum</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>A História do Python | Linguagem de Programação</title>
     <style>
-        /* Variáveis de cores atualizadas */
         :root {
-            --cor-1: #FF6B6B; /* Coral vermelho */
-            --cor-2: #4ECDC4; /* Turquesa */
-            --cor-3: #FFD93D; /* Amarelo vibrante */
-            --cor-4: #95A5A6; /* Cinza azulado */
-            --cor-5: #8E44AD; /* Roxo */
-            --cor-6: #2ECC71; /* Verde esmeralda */
-            --cor-principal: #4a90e2; /* Azul original do gráfico */
+            --python-blue: #306998;
+            --python-yellow: #FFD43B;
         }
-
+        
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, 
-                rgba(20, 30, 48, 0.97) 0%, 
-                rgba(36, 59, 85, 0.97) 100%),
-                url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            color: #ffffff;
-            line-height: 1.6;
-        }
-
-        /* Título Principal */
-        .titulo-principal {
-            background: linear-gradient(135deg, 
-                rgba(20, 30, 48, 0.95) 0%, 
-                rgba(36, 59, 85, 0.95) 100%);
-            padding: 50px 20px;
-            text-align: center;
-            border-bottom: 3px solid #4a90e2;
-        }
-
-        .titulo-principal h1 {
-            font-size: 3em;
-            color: var(--cor-principal);
-            margin: 0;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Cards de Navegação */
-        .nav-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .nav-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-left: none;
-            border-radius: 10px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .nav-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            transition: all 0.3s ease;
-        }
-
-        .nav-card:nth-child(1)::before { background: var(--cor-1); }
-        .nav-card:nth-child(2)::before { background: var(--cor-2); }
-        .nav-card:nth-child(3)::before { background: var(--cor-3); }
-        .nav-card:nth-child(4)::before { background: var(--cor-4); }
-        .nav-card:nth-child(5)::before { background: var(--cor-5); }
-        .nav-card:nth-child(6)::before { background: var(--cor-6); }
-
-        .nav-card:hover::before {
-            height: 100%;
-            opacity: 0.1;
-        }
-
-        .nav-card i {
-            font-size: 2em;
-            margin-bottom: 15px;
-            position: relative;
-        }
-
-        .nav-card:nth-child(1) i { color: var(--cor-1); }
-        .nav-card:nth-child(2) i { color: var(--cor-2); }
-        .nav-card:nth-child(3) i { color: var(--cor-3); }
-        .nav-card:nth-child(4) i { color: var(--cor-4); }
-        .nav-card:nth-child(5) i { color: var(--cor-5); }
-        .nav-card:nth-child(6) i { color: var(--cor-6); }
-
-        /* Seções de Conteúdo */
-        .secao-conteudo {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .card-conteudo {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-        }
-
-        .card-conteudo h2 {
-            color: var(--cor-principal);
-            border-bottom: 2px solid var(--cor-principal);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-
-        /* Lista de Tópicos */
-        .lista-topicos {
-            list-style: none;
-            padding: 0;
-        }
-
-        .lista-topicos li {
-            margin: 10px 0;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .lista-topicos li::before {
-            content: "•";
-            color: var(--cor-principal);
-            position: absolute;
-            left: 0;
-        }
-
-        /* Imagens */
-        .imagem-scrum {
-            width: 100%;
-            max-width: 600px;
-            border-radius: 10px;
-            margin: 20px auto;
-            display: block;
-        }
-
-        /* Estilo para a tabela de parceiros */
-        .partner-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-
-        .partner-table th,
-        .partner-table td {
-            padding: 15px;
-            text-align: left;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .partner-table th {
-            background: rgba(74, 144, 226, 0.3);
-            color: #ffffff;
-        }
-
-        .partner-table tr:hover {
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .partner-badge {
-            max-width: 200px;
-            display: block;
-            margin: 20px auto;
-        }
-
-        .partner-section {
-            text-align: center;
-            margin: 40px 0;
-        }
-
-        /* Estilo para a imagem do banner de parceiros */
-        .partner-banner {
-            width: 100%;
-            max-width: 1000px;
-            height: 300px;
-            margin: 20px auto;
-            display: block;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .partner-intro {
-            text-align: center;
-            margin: 30px 0;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-
-        .partner-intro p {
-            font-size: 1.2em;
+            font-family: 'Segoe UI', Arial, sans-serif;
             line-height: 1.8;
-            margin: 15px 0;
+            margin: 0;
+            color: #fff;
+            background-color: #000;
         }
 
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .titulo-principal h1 {
-                font-size: 2em;
-            }
-
-            .nav-cards {
-                padding: 20px;
-            }
-
-            .card-conteudo {
-                padding: 20px;
-            }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
-        .scrum-section {
-            margin-top: 4rem;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            backdrop-filter: blur(5px);
-        }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .grid-item {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: left;
-        }
-
-        .btn-container {
-            margin-top: 3rem;
-            text-align: center;
-        }
-
-        .btn-mais-conteudo {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background-color: #28a745;
+        header {
+            background: var(--python-blue);
             color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .btn-mais-conteudo:hover {
-            background-color: transparent;
-            border-color: #28a745;
-            color: #28a745;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
-        }
-
-        /* Estilos para a nova seção de gráficos e tabelas */
-        .graficos-section {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            margin-top: 2rem;
-        }
-
-        .graficos-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .graficos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .grafico-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .grafico-titulo {
-            color: var(--cor-principal);
-            font-size: 1.5em;
-            margin-bottom: 1rem;
-            opacity: 0;
-            transform: translateX(-20px);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-        }
-
-        .grafico-titulo.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .scrum-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .scrum-table th,
-        .scrum-table td {
-            padding: 1rem;
-            text-align: left;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .scrum-table th {
-            background: rgba(74, 144, 226, 0.2);
-        }
-
-        .scrum-table tr:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        /* Estilo para a assinatura */
-        .assinatura {
+            padding: 40px 0;
             text-align: center;
-            padding: 2rem 0;
-            margin-top: 2rem;
-            font-size: 0.8em;
-            color: rgba(255, 255, 255, 0.6);
-            font-style: italic;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 40px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .header-logo {
+            width: 250px;
+            height: auto;
+        }
+
+        .header-text {
+            text-align: left;
+        }
+
+        @media (max-width: 600px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            .header-text {
+                text-align: center;
+            }
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        h2 {
+            color: var(--python-blue);
+            border-bottom: 3px solid var(--python-yellow);
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        .section {
+            background: #fff;
+            color: #333;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .timeline {
+            border-left: 3px solid var(--python-blue);
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: var(--python-blue);
+            position: absolute;
+            left: -26px;
+            border-radius: 50%;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .feature-item {
+            background: #f8f9fa;
+            color: #333;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 3px solid var(--python-yellow);
+        }
+
+        .quote {
+            color: #666;
+            padding: 20px;
+            border-left: 4px solid var(--python-yellow);
+            margin: 20px 0;
+            background: #f8f9fa;
+        }
+
+        .section p, 
+        .section li, 
+        .section strong {
+            color: #333;
+        }
+
+        /* Estilo para o botão flutuante */
+        .floating-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--python-blue);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .floating-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            background: #1a4971;
+        }
+
+        .floating-button i {
+            font-size: 20px;
+        }
+
+        /* Animação de pulso para o botão */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .floating-button {
+            animation: pulse 2s infinite;
+        }
+
+        .floating-button:hover {
+            animation: none;
         }
     </style>
+    <!-- Adicione o link para os ícones do Font Awesome no head -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="titulo-principal">
-        <h1>METODOLOGIA SCRUM</h1>
-        <p>Framework Ágil para Gestão e Planejamento de Projetos</p>
-    </div>
-
-    <div class="nav-cards">
-        <div class="nav-card" onclick="scrollToSection('introducao')">
-            <i class="fas fa-book"></i>
-            <h3>Introdução</h3>
-            <p>Conceitos Fundamentais</p>
-        </div>
-
-        <div class="nav-card" onclick="scrollToSection('pilares')">
-            <i class="fas fa-columns"></i>
-            <h3>Pilares</h3>
-            <p>Fundamentos do Scrum</p>
-        </div>
-
-        <div class="nav-card" onclick="scrollToSection('papeis')">
-            <i class="fas fa-users"></i>
-            <h3>Papéis</h3>
-            <p>Equipe Scrum</p>
-        </div>
-
-        <div class="nav-card" onclick="scrollToSection('eventos')">
-            <i class="fas fa-calendar-alt"></i>
-            <h3>Eventos</h3>
-            <p>Cerimônias do Scrum</p>
-        </div>
-
-        <div class="nav-card" onclick="scrollToSection('artefatos')">
-            <i class="fas fa-clipboard-list"></i>
-            <h3>Artefatos</h3>
-            <p>Documentos e Ferramentas</p>
-        </div>
-
-        <div class="nav-card" onclick="scrollToSection('praticas')">
-            <i class="fas fa-check-circle"></i>
-            <h3>Práticas</h3>
-            <p>Implementação</p>
-        </div>
-    </div>
-
-    <div class="secao-conteudo">
-        <div class="card-conteudo" id="introducao">
-            <h2>Introdução ao Scrum</h2>
-            <p>O Scrum é um framework ágil para gestão e planejamento de projetos de software que foi criado na década de 90. Ele é:</p>
-            <ul class="lista-topicos">
-                <li>Leve e simples de entender</li>
-                <li>Difícil de dominar na prática</li>
-                <li>Baseado em entregas incrementais e iterativas</li>
-                <li>Focado em transparência, inspeção e adaptação</li>
-            </ul>
-        </div>
-
-        <div class="card-conteudo" id="pilares">
-            <h2>Pilares do Scrum</h2>
-            <ul class="lista-topicos">
-                <li><strong>Transparência:</strong> Aspectos significativos do processo devem estar visíveis aos responsáveis pelo resultado</li>
-                <li><strong>Inspeção:</strong> Usuários Scrum devem inspecionar artefatos e progresso frequentemente</li>
-                <li><strong>Adaptação:</strong> Ajustes devem ser feitos assim que possível para minimizar problemas</li>
-            </ul>
-        </div>
-
-        <div class="card-conteudo" id="papeis">
-            <h2>Papéis no Scrum</h2>
-            <ul class="lista-topicos">
-                <li><strong>Product Owner:</strong> Responsável por maximizar o valor do produto e gerenciar o Product Backlog</li>
-                <li><strong>Scrum Master:</strong> Garante que o Scrum seja entendido e aplicado corretamente</li>
-                <li><strong>Development Team:</strong> Profissionais que realizam o trabalho de entregar um incremento do produto</li>
-            </ul>
-        </div>
-
-        <div class="card-conteudo" id="eventos">
-            <h2>Eventos do Scrum</h2>
-            <ul class="lista-topicos">
-                <li><strong>Sprint:</strong> Time-box de um mês ou menos durante o qual um incremento "Pronto" é criado</li>
-                <li><strong>Sprint Planning:</strong> Planejamento do trabalho a ser realizado na Sprint</li>
-                <li><strong>Daily Scrum:</strong> Evento diário de 15 minutos para sincronização da equipe</li>
-                <li><strong>Sprint Review:</strong> Apresentação do incremento desenvolvido na Sprint</li>
-                <li><strong>Sprint Retrospective:</strong> Oportunidade para o Time Scrum inspecionar a si próprio</li>
-            </ul>
-        </div>
-
-        <div class="card-conteudo" id="artefatos">
-            <h2>Artefatos do Scrum</h2>
-            <ul class="lista-topicos">
-                <li><strong>Product Backlog:</strong> Lista ordenada de tudo que é necessário no produto</li>
-                <li><strong>Sprint Backlog:</strong> Itens do Product Backlog selecionados para a Sprint</li>
-                <li><strong>Incremento:</strong> Soma de todos os itens do Product Backlog completados durante uma Sprint</li>
-            </ul>
-        </div>
-
-        <div class="card-conteudo" id="praticas">
-            <h2>Práticas Recomendadas</h2>
-            <ul class="lista-topicos">
-                <li>Manter reuniões curtas e objetivas</li>
-                <li>Utilizar quadros visuais (físicos ou digitais)</li>
-                <li>Priorizar a comunicação face a face</li>
-                <li>Manter documentação atualizada e acessível</li>
-                <li>Realizar retrospectivas sinceras e construtivas</li>
-            </ul>
-        </div>
-
-        <div class="card-conteudo" id="parceiros">
-            <h2>Programa de Parceiros CertiProf</h2>
-            
-            <img src="https://certiprof.com/cdn/shop/files/CertiProf_Logo_2023_-_Full_Color_200x.png" 
-                 alt="CertiProf Partner Logo" 
-                 style="width: 150px; height: auto; display: block; margin: 20px auto; opacity: 0.9;">
-
-            <div class="partner-intro">
-                <p>O Programa de Parceiros CertiProf é uma iniciativa que visa estabelecer relações duradouras com organizações comprometidas com o desenvolvimento profissional e a excelência em certificações.</p>
-                <p>Como Silver Partner 2023-2024, oferecemos um conjunto completo de soluções e benefícios para impulsionar sua carreira.</p>
-            </div>
-
-            <div class="partner-section">
-                <img src="certiprof-silver-badge.png" alt="CertiProf Silver Partner Badge" class="partner-badge">
-            </div>
-
-            <table class="partner-table">
-                <thead>
-                    <tr>
-                        <th>Nível de Parceria</th>
-                        <th>Benefícios</th>
-                        <th>Requisitos</th>
-                        <th>Validade</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Bronze Partner</strong></td>
-                        <td>
-                            <ul>
-                                <li>Acesso ao portal de parceiros</li>
-                                <li>Material promocional básico</li>
-                                <li>Suporte por email</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul>
-                                <li>Mínimo de 50 certificações/ano</li>
-                                <li>1 instrutor certificado</li>
-                            </ul>
-                        </td>
-                        <td>1 ano</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Silver Partner</strong></td>
-                        <td>
-                            <ul>
-                                <li>Todos os benefícios Bronze</li>
-                                <li>Descontos especiais</li>
-                                <li>Suporte prioritário</li>
-                                <li>Marketing conjunto</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul>
-                                <li>Mínimo de 100 certificações/ano</li>
-                                <li>2 instrutores certificados</li>
-                                <li>Avaliação de qualidade positiva</li>
-                            </ul>
-                        </td>
-                        <td>1 ano (2023-2024)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Gold Partner</strong></td>
-                        <td>
-                            <ul>
-                                <li>Todos os benefícios Silver</li>
-                                <li>Eventos exclusivos</li>
-                                <li>Suporte dedicado</li>
-                                <li>Personalização de programas</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul>
-                                <li>Mínimo de 200 certificações/ano</li>
-                                <li>3+ instrutores certificados</li>
-                                <li>Excelência em qualidade</li>
-                                <li>Presença internacional</li>
-                            </ul>
-                        </td>
-                        <td>1 ano</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="scrum-section">
-            <h2>Exemplos de Scrum na Prática</h2>
-            
-            <div class="grid-container">
-                <div class="grid-item">
-                    <h3>Sprint Planning</h3>
-                    <ul>
-                        <li>Definição do Sprint Goal</li>
-                        <li>Seleção de itens do Product Backlog</li>
-                        <li>Estimativas de tempo</li>
-                        <li>Criação do Sprint Backlog</li>
-                    </ul>
-                </div>
-
-                <div class="grid-item">
-                    <h3>Daily Scrum</h3>
-                    <ul>
-                        <li>15 minutos diários</li>
-                        <li>O que foi feito ontem?</li>
-                        <li>O que será feito hoje?</li>
-                        <li>Há impedimentos?</li>
-                    </ul>
-                </div>
-
-                <div class="grid-item">
-                    <h3>Sprint Review</h3>
-                    <ul>
-                        <li>Demonstração do incremento</li>
-                        <li>Feedback dos stakeholders</li>
-                        <li>Atualização do Product Backlog</li>
-                        <li>Próximos passos</li>
-                    </ul>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="https://www.python.org/static/community_logos/python-logo-generic.svg" alt="Logo Python" class="header-logo">
+                <div class="header-text">
+                    <h1>A História da Linguagem Python</h1>
+                    <p>Uma jornada através do tempo da linguagem de programação mais versátil do mundo</p>
                 </div>
             </div>
-
-            <div class="btn-container">
-                <a href="#" class="btn-mais-conteudo" onclick="mostrarGraficos(event)">
-                    Explorar Mais Conteúdos sobre Scrum →
-                </a>
-            </div>
         </div>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2>Origem e Criação</h2>
+            <p>Python foi concebida no final dos anos 1980 por Guido van Rossum, um programador holandês que estava em busca de uma linguagem de programação que combinasse poder com simplicidade. O desenvolvimento começou em dezembro de 1989 no Centro de Matemática e Informática (CWI) nos Países Baixos.</p>
+            <div class="quote">
+                "Python é uma linguagem que combina notável poder com sintaxe muito clara" - Guido van Rossum
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>O Nome e Sua História</h2>
+            <p>Contrário ao que muitos pensam, o nome Python não tem relação com a serpente que aparece em seu logotipo. Na verdade, Guido van Rossum nomeou a linguagem em homenagem ao grupo de comédia britânico "Monty Python's Flying Circus". Esta escolha reflete um aspecto importante da cultura Python: a ideia de que programar pode (e deve) ser uma atividade divertida e criativa.</p>
+        </section>
+
+        <section class="section">
+            <h2>Filosofia e Princípios</h2>
+            <p>O Python é guiado por uma filosofia de design única, conhecida como "O Zen do Python". Estes princípios fundamentais moldam não apenas a linguagem, mas também a forma como os programadores Python abordam o desenvolvimento de software.</p>
+            <div class="feature-grid">
+                <div class="feature-item">Bonito é melhor que feio</div>
+                <div class="feature-item">Explícito é melhor que implícito</div>
+                <div class="feature-item">Simples é melhor que complexo</div>
+                <div class="feature-item">Complexo é melhor que complicado</div>
+                <div class="feature-item">Legibilidade conta</div>
+                <div class="feature-item">Erros nunca devem passar silenciosamente</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Evolução Histórica</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>1989:</strong> Início do desenvolvimento
+                </div>
+                <div class="timeline-item">
+                    <strong>1991:</strong> Primeira versão pública (0.9.0)
+                </div>
+                <div class="timeline-item">
+                    <strong>1994:</strong> Python 1.0 - Características fundamentais estabelecidas
+                </div>
+                <div class="timeline-item">
+                    <strong>2000:</strong> Python 2.0 - Introdução de list comprehensions e garbage collection
+                </div>
+                <div class="timeline-item">
+                    <strong>2008:</strong> Python 3.0 - Grande reforma na linguagem para maior consistência
+                </div>
+                <div class="timeline-item">
+                    <strong>2020:</strong> Fim do suporte ao Python 2, consolidando Python 3 como padrão
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Aplicações Modernas</h2>
+            <p>Python se tornou uma das linguagens mais versáteis e utilizadas no mundo da tecnologia, com aplicações em:</p>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <strong>Inteligência Artificial</strong>
+                    <p>TensorFlow, PyTorch, Scikit-learn</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Ciência de Dados</strong>
+                    <p>Pandas, NumPy, Matplotlib</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Desenvolvimento Web</strong>
+                    <p>Django, Flask, FastAPI</p>
+                </div>
+                <div class="feature-item">
+                    <strong>Automação</strong>
+                    <p>Selenium, PyAutoGUI</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Impacto e Legado</h2>
+            <p>Python transformou o cenário da programação ao democratizar o acesso à computação. Sua sintaxe clara e curva de aprendizado suave tornaram a programação acessível a cientistas, analistas de dados, estudantes e profissionais de diversas áreas.</p>
+            <p>Grandes empresas como Google, NASA, Instagram e Spotify utilizam Python extensivamente em suas operações, demonstrando sua robustez e versatilidade em ambientes de produção de grande escala.</p>
+        </section>
+
+        <section class="section">
+            <h2>Conclusão</h2>
+            <p>A história do Python é um testemunho do poder da simplicidade e da importância do design thoughtful em linguagens de programação. Desde sua concepção até os dias atuais, Python manteve-se fiel aos seus princípios fundamentais enquanto evoluía para atender às demandas modernas da computação.</p>
+            <p>Com uma comunidade vibrante e em constante crescimento, Python continua a moldar o futuro da tecnologia, mantendo-se como uma das ferramentas mais importantes no arsenal de desenvolvedores em todo o mundo.</p>
+        </section>
     </div>
 
-    <!-- Nova seção de gráficos e tabelas -->
-    <div class="graficos-section" id="graficosSection">
-        <h2 class="grafico-titulo">Gráficos e Tabelas do Scrum</h2>
-        
-        <div class="graficos-grid">
-            <div class="grafico-card">
-                <h3 class="grafico-titulo">Velocidade da Sprint</h3>
-                <canvas id="velocityChart"></canvas>
-            </div>
-            
-            <div class="grafico-card">
-                <h3 class="grafico-titulo">Burndown Chart</h3>
-                <canvas id="burndownChart"></canvas>
-            </div>
-            
-            <div class="grafico-card">
-                <h3 class="grafico-titulo">Métricas do Sprint</h3>
-                <table class="scrum-table">
-                    <thead>
-                        <tr>
-                            <th>Métrica</th>
-                            <th>Valor</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Velocidade Média</td>
-                            <td>32 pontos</td>
-                            <td>↑ Em alta</td>
-                        </tr>
-                        <tr>
-                            <td>Taxa de Conclusão</td>
-                            <td>87%</td>
-                            <td>✓ Ótimo</td>
-                        </tr>
-                        <tr>
-                            <td>Débito Técnico</td>
-                            <td>13%</td>
-                            <td>↓ Reduzindo</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <div class="assinatura">
-        Desenvolvido por Geraldo Sense
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        function scrollToSection(id) {
-            const element = document.getElementById(id);
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function mostrarGraficos(event) {
-            event.preventDefault();
-            const section = document.getElementById('graficosSection');
-            const titulos = document.querySelectorAll('.grafico-titulo');
-            
-            section.classList.add('visible');
-            titulos.forEach((titulo, index) => {
-                setTimeout(() => {
-                    titulo.classList.add('visible');
-                }, index * 200);
-            });
-
-            // Criar gráfico de velocidade
-            const velocityCtx = document.getElementById('velocityChart').getContext('2d');
-            new Chart(velocityCtx, {
-                type: 'bar',
-                data: {
-                    labels: ['Sprint 1', 'Sprint 2', 'Sprint 3', 'Sprint 4', 'Sprint 5'],
-                    datasets: [{
-                        label: 'Pontos Completados',
-                        data: [25, 30, 28, 35, 32],
-                        backgroundColor: 'rgba(74, 144, 226, 0.6)',
-                        borderColor: 'rgba(74, 144, 226, 1)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            grid: {
-                                color: 'rgba(255, 255, 255, 0.1)'
-                            },
-                            ticks: {
-                                color: '#ffffff'
-                            }
-                        },
-                        x: {
-                            grid: {
-                                color: 'rgba(255, 255, 255, 0.1)'
-                            },
-                            ticks: {
-                                color: '#ffffff'
-                            }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            labels: {
-                                color: '#ffffff'
-                            }
-                        }
-                    }
-                }
-            });
-
-            // Criar burndown chart
-            const burndownCtx = document.getElementById('burndownChart').getContext('2d');
-            new Chart(burndownCtx, {
-                type: 'line',
-                data: {
-                    labels: ['Dia 1', 'Dia 2', 'Dia 3', 'Dia 4', 'Dia 5', 'Dia 6', 'Dia 7', 'Dia 8', 'Dia 9', 'Dia 10'],
-                    datasets: [{
-                        label: 'Ideal',
-                        data: [100, 90, 80, 70, 60, 50, 40, 30, 20, 0],
-                        borderColor: 'rgba(46, 204, 113, 1)',
-                        borderDash: [5, 5],
-                        fill: false
-                    }, {
-                        label: 'Atual',
-                        data: [100, 95, 85, 82, 75, 65, 55, 45, 30, 10],
-                        borderColor: 'rgba(74, 144, 226, 1)',
-                        fill: false
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            grid: {
-                                color: 'rgba(255, 255, 255, 0.1)'
-                            },
-                            ticks: {
-                                color: '#ffffff'
-                            }
-                        },
-                        x: {
-                            grid: {
-                                color: 'rgba(255, 255, 255, 0.1)'
-                            },
-                            ticks: {
-                                color: '#ffffff'
-                            }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            labels: {
-                                color: '#ffffff'
-                            }
-                        }
-                    }
-                }
-            });
-        }
-    </script>
+    <!-- Adicione antes do fechamento do body -->
+    <a href="exercicios.html" class="floating-button">
+        <i class="fas fa-code"></i>
+        Praticar Python
+    </a>
 </body>
 </html>

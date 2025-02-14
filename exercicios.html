@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios de Python</title>
+    <style>
+        :root {
+            --python-blue: #306998;
+            --python-yellow: #FFD43B;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            color: #fff;
+            background-color: #000;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: var(--python-blue);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .exercise-card {
+            background: #fff;
+            color: #333;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+        }
+
+        .difficulty {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            margin-bottom: 10px;
+        }
+
+        .beginner { background: #4CAF50; color: white; }
+        .intermediate { background: #FFC107; color: black; }
+        .advanced { background: #f44336; color: white; }
+
+        .try-button {
+            display: inline-block;
+            background: var(--python-blue);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .try-button:hover {
+            background: #1a4971;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px 0;
+            transition: background 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #444;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Exercícios de Python</h1>
+            <p>Pratique seus conhecimentos com exercícios interativos</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="back-button">← Voltar para História</a>
+
+        <!-- Exercícios Básicos -->
+        <div class="exercise-card">
+            <span class="difficulty beginner">Iniciante</span>
+            <h2>Manipulação Básica de Strings</h2>
+            <p>1. Contar caracteres em uma string</p>
+            <pre>
+nome = "Geraldo Sense"
+print(len(nome))  # Resultado: 13
+            </pre>
+            <p>2. Converter para maiúsculas</p>
+            <pre>
+nome = "Geraldo Sense"
+print(nome.upper())  # Resultado: GERALDO SENSE
+            </pre>
+            <a href="exercicios/strings_basico.py" class="try-button">Tentar Exercício</a>
+        </div>
+
+        <div class="exercise-card">
+            <span class="difficulty beginner">Iniciante</span>
+            <h2>Operações com Strings</h2>
+            <p>3. Converter para minúsculas</p>
+            <pre>
+nome = "Geraldo Sense"
+print(nome.lower())  # Resultado: geraldo sense
+            </pre>
+            <p>4. Contar ocorrências de um caractere</p>
+            <pre>
+nome = "Geraldo Sense"
+print(nome.count('e'))  # Resultado: 3
+            </pre>
+            <a href="exercicios/strings_operacoes.py" class="try-button">Tentar Exercício</a>
+        </div>
+
+        <div class="exercise-card">
+            <span class="difficulty beginner">Iniciante</span>
+            <h2>Mais Operações com Strings</h2>
+            <p>5. Verificar se uma palavra está na frase</p>
+            <pre>
+nome = "Geraldo Sense"
+print("Geraldo" in nome)  # Resultado: True
+            </pre>
+            <p>6. Substituir palavras em uma frase</p>
+            <pre>
+nome = "Geraldo Sense"
+print(nome.replace("Sense", "Silva"))  # Resultado: Geraldo Silva
+            </pre>
+            <p>7. Reverter uma string</p>
+            <pre>
+nome = "Geraldo Sense"
+print(nome[::-1])  # Resultado: esneS odlareG
+            </pre>
+        </div>
+
+        <div class="exercise-card">
+            <span class="difficulty beginner">Iniciante</span>
+            <h2>Formatação de Strings</h2>
+            <p>8. Dividir uma frase em palavras</p>
+            <pre>
+nome = "Geraldo Sense"
+print(nome.split())  # Resultado: ['Geraldo', 'Sense']
+            </pre>
+            <p>9. Capitalizar palavras</p>
+            <pre>
+nome = "geraldo sense"
+print(nome.title())  # Resultado: Geraldo Sense
+            </pre>
+            <p>10. Remover espaços em branco</p>
+            <pre>
+nome = "  Geraldo Sense  "
+print(nome.strip())  # Resultado: Geraldo Sense
+            </pre>
+        </div>
+
+        <div class="exercise-card">
+            <span class="difficulty beginner">Iniciante</span>
+            <h2>Validação e Extração</h2>
+            <p>11. Verificar código de produto</p>
+            <pre>
+codigo = "PROD-1234"
+formato_valido = codigo.startswith("PROD-") and codigo[5:].isdigit()
+print(formato_valido)  # Resultado: True
+            </pre>
+            <p>12. Separar placa de carro</p>
+            <pre>
+placa = "ABC-1234"
+letras = placa[:3]
+numeros = placa[4:]
+print(f"Letras: {letras}, Números: {numeros}")  # Resultado: Letras: ABC, Números: 1234
+            </pre>
+        </div>
+
+        <div class="exercise-card">
+            <span class="difficulty beginner">Iniciante</span>
+            <h2>Manipulação de Strings Avançada</h2>
+            <p>13. Enigma da senha</p>
+            <pre>
+texto = "Kg8vlk8jIU7D8nNbd0GG4F2aCa4gnb85oÇAcm9aBmc55mnbtBl39Cvbn3"
+senha = texto[3:-15:5].upper()
+print(senha)  # Resultado dependerá do padrão especificado
+            </pre>
+            <p>14. Acessar caractere isolado</p>
+            <pre>
+nome = "Geraldo Sense"
+print(nome[0])  # Resultado: G
+            </pre>
+            <p>15. Substring usando slicing</p>
+            <pre>
+nome = "Geraldo Sense"
+print(nome[0:7])  # Resultado: Geraldo
+            </pre>
+        </div>
+
+        <div class="exercise-card">
+            <span class="difficulty beginner">Iniciante</span>
+            <h2>Cálculos Matemáticos Básicos</h2>
+            <p>16. Perímetro do círculo</p>
+            <pre>
+import math
+raio = 5
+perimetro = 2 * math.pi * raio
+print(f"Perímetro: {perimetro:.2f}")  # Resultado: 31.42
+            </pre>
+            <p>17. Idade em dias</p>
+            <pre>
+idade = 25
+dias = idade * 365
+print(f"Idade em dias: {dias}")  # Resultado: 9125
+            </pre>
+            <p>18. Metros para centímetros</p>
+            <pre>
+metros = 5
+centimetros = metros * 100
+print(f"{metros}m = {centimetros}cm")  # Resultado: 5m = 500cm
+            </pre>
+        </div>
+
+        <div class="exercise-card">
+            <span class="difficulty beginner">Iniciante</span>
+            <h2>Interação com Usuário</h2>
+            <p>19. Área do retângulo</p>
+            <pre>
+base = 10
+altura = 5
+area = base * altura
+print(f"Área do retângulo: {area}")  # Resultado: Área do retângulo: 50
+            </pre>
+            <p>20. Programa de boas-vindas</p>
+            <pre>
+nome = "Geraldo Sense"
+print(f"Bom dia! É um prazer conhecer você, {nome}!")  
+# Resultado: Bom dia! É um prazer conhecer você, Geraldo Sense!
+            </pre>
+            <p>21. História interativa</p>
+            <pre>
+historia = """Era uma vez um programador...
+Ele adorava Python...
+E viveu feliz para sempre..."""
+
+for paragrafo in historia.split('\n'):
+    print(paragrafo)
+    input("Pressione Enter para continuar...")
+# Resultado: Exibe cada linha e aguarda Enter
+            </pre>
+        </div>
+
+        <div class="exercise-card">
+            <span class="difficulty beginner">Iniciante</span>
+            <h2>Operações Matemáticas</h2>
+            <p>22. Raiz quadrada</p>
+            <pre>
+import math
+numero = 16
+raiz = math.sqrt(numero)
+print(f"Raiz quadrada de {numero} é {raiz}")  # Resultado: Raiz quadrada de 16 é 4.0
+            </pre>
+            <p>23. Dobro do número</p>
+            <pre>
+numero = 7
+dobro = numero * 2
+print(f"O dobro de {numero} é {dobro}")  # Resultado: O dobro de 7 é 14
+            </pre>
+            <p>24. Potenciação</p>
+            <pre>
+a = 2
+b = 3
+resultado = a ** b
+print(f"{a} elevado a {b} = {resultado}")  # Resultado: 2 elevado a 3 = 8
+            </pre>
+        </div>
+
+        <div class="exercise-card">
+            <span class="difficulty beginner">Iniciante</span>
+            <h2>Conversões de Tempo</h2>
+            <p>25. Segundos para horas e minutos</p>
+            <pre>
+segundos = 3665
+horas = segundos // 3600
+minutos = (segundos % 3600) // 60
+segs = segundos % 60
+print(f"{segundos}s = {horas}h {minutos}m {segs}s")  
+# Resultado: 3665s = 1h 1m 5s
+            </pre>
+            <p>26. Área do triângulo</p>
+            <pre>
+base = 10
+altura = 5
+area = (base * altura) / 2
+print(f"Área do triângulo: {area}")  # Resultado: Área do triângulo: 25.0
+            </pre>
+            <p>27. Troca de valores</p>
+            <pre>
+x = 45
+y = 10
+x, y = y, x
+print(f"x = {x}, y = {y}")  # Resultado: x = 10, y = 45
+            </pre>
+        </div>
+
+        <div class="exercise-card">
+            <span class="difficulty beginner">Iniciante</span>
+            <h2>Números Aleatórios e Conversões</h2>
+            <p>28. Gerar número aleatório</p>
+            <pre>
+import random
+numero = random.randint(1, 100)
+print(f"Número aleatório: {numero}")  # Resultado: Número aleatório: 42 (exemplo)
+            </pre>
+            <p>29. Quilômetros para milhas</p>
+            <pre>
+km = 10
+milhas = km * 0.621371
+print(f"{km}km = {milhas:.2f} milhas")  # Resultado: 10km = 6.21 milhas
+            </pre>
+            <p>30. Celsius para Fahrenheit</p>
+            <pre>
+celsius = 25
+fahrenheit = (celsius * 9/5) + 32
+print(f"{celsius}°C = {fahrenheit}°F")  # Resultado: 25°C = 77.0°F
+            </pre>
+        </div>
+
+        <div class="exercise-card">
+            <span class="difficulty beginner">Iniciante</span>
+            <h2>Cálculos de Tempo e Saúde</h2>
+            <p>31. Tempo de viagem</p>
+            <pre>
+distancia = 200  # km
+velocidade = 80  # km/h
+tempo = distancia / velocidade
+print(f"Tempo de viagem: {tempo:.2f} horas")  # Resultado: Tempo de viagem: 2.50 horas
+            </pre>
+            <p>32-33. Cálculo de redução de vida (fumante)</p>
+            <pre>
+cigarros_por_dia = 20
+anos_fumando = 5
+total_cigarros = cigarros_por_dia * 365 * anos_fumando
+minutos_perdidos = total_cigarros * 10
+dias_perdidos = minutos_perdidos / (24 * 60)
+print(f"Dias de vida perdidos: {dias_perdidos:.1f}")  # Resultado: Dias de vida perdidos: 250.0
+            </pre>
+        </div>
+
+        <div class="exercise-card">
+            <span class="difficulty beginner">Iniciante</span>
+            <h2>Cálculos Financeiros</h2>
+            <p>34. Aumento de salário</p>
+            <pre>
+salario = 1000
+percentual = 10
+aumento = salario * (percentual/100)
+novo_salario = salario + aumento
+print(f"Aumento: R${aumento:.2f}")  # Resultado: Aumento: R$100.00
+print(f"Novo salário: R${novo_salario:.2f}")  # Resultado: Novo salário: R$1100.00
+            </pre>
+            <p>35. Conversão de horas para dias</p>
+            <pre>
+horas = 50
+dias = horas // 24
+horas_restantes = horas % 24
+print(f"{horas}h = {dias}d {horas_restantes}h")  # Resultado: 50h = 2d 2h
+            </pre>
+        </div>
+
+        <div class="exercise-card">
+            <span class="difficulty beginner">Iniciante</span>
+            <h2>Cálculos com Notas e Números</h2>
+            <p>36. Média de notas</p>
+            <pre>
+nota1, nota2, nota3 = 7.5, 8.0, 9.0
+media = (nota1 + nota2 + nota3) / 3
+print(f"Média: {media:.2f}")  # Resultado: Média: 8.17
+            </pre>
+            <p>37. Operações básicas</p>
+            <pre>
+num1, num2 = 10, 5
+soma = num1 + num2
+diferenca = num1 - num2
+produto = num1 * num2
+print(f"Soma: {soma}")  # Resultado: Soma: 15
+print(f"Diferença: {diferenca}")  # Resultado: Diferença: 5
+print(f"Produto: {produto}")  # Resultado: Produto: 50
+            </pre>
+        </div>
+
+        <div class="exercise-card">
+            <span class="difficulty beginner">Iniciante</span>
+            <h2>Operações Matemáticas Básicas</h2>
+            <p>38. Operações com dois números</p>
+            <pre>
+num1 = 10
+num2 = 5
+soma = num1 + num2
+diferenca = num1 - num2
+produto = num1 * num2
+divisao_inteira = num1 // num2
+print(f"Soma: {soma}")  # Resultado: Soma: 15
+print(f"Diferença: {diferenca}")  # Resultado: Diferença: 5
+print(f"Produto: {produto}")  # Resultado: Produto: 50
+print(f"Divisão inteira: {divisao_inteira}")  # Resultado: Divisão inteira: 2
+            </pre>
+            <p>39. Resto da divisão</p>
+            <pre>
+num1 = 10
+num2 = 3
+resto = num1 % num2
+print(f"Resto da divisão: {resto}")  # Resultado: Resto da divisão: 1
+            </pre>
+            <p>40. Potenciação</p>
+            <pre>
+num1 = 2
+num2 = 3
+potencia = num1 ** num2
+print(f"Potência: {potencia}")  # Resultado: Potência: 8
+            </pre>
+        </div>
+
+        <div class="exercise-card">
+            <span class="difficulty beginner">Iniciante</span>
+            <h2>Trigonometria e Cálculos</h2>
+            <p>41. Funções trigonométricas</p>
+            <pre>
+import math
+angulo = 45
+seno = math.sin(math.radians(angulo))
+cosseno = math.cos(math.radians(angulo))
+tangente = math.tan(math.radians(angulo))
+print(f"Seno: {seno:.2f}")  # Resultado: Seno: 0.71
+print(f"Cosseno: {cosseno:.2f}")  # Resultado: Cosseno: 0.71
+print(f"Tangente: {tangente:.2f}")  # Resultado: Tangente: 1.00
+            </pre>
+            <p>42-43. Cálculo de salário</p>
+            <pre>
+horas_trabalhadas = 160
+valor_hora = 50
+salario = horas_trabalhadas * valor_hora
+print(f"Salário mensal: R${salario:.2f}")  # Resultado: Salário mensal: R$8000.00
+            </pre>
+        </div>
+
+        <div class="exercise-card">
+            <span class="difficulty beginner">Iniciante</span>
+            <h2>Interação com Usuário</h2>
+            <p>44. Modo noturno</p>
+            <pre>
+resposta = "sim"
+if resposta.lower() == "sim":
+    print("Modo noturno ativado!")  # Resultado: Modo noturno ativado!
+else:
+    print("Modo noturno desativado!")
+            </pre>
+            <p>45. Área e perímetro do quadrado</p>
+            <pre>
+lado = 5
+area = lado ** 2
+perimetro = 4 * lado
+print(f"Área: {area}")  # Resultado: Área: 25
+print(f"Perímetro: {perimetro}")  # Resultado: Perímetro: 20
+            </pre>
+        </div>
+
+        <div class="exercise-card">
+            <span class="difficulty beginner">Iniciante</span>
+            <h2>Geometria</h2>
+            <p>46. Área e perímetro da circunferência</p>
+            <pre>
+import math
+raio = 5
+area = math.pi * raio ** 2
+perimetro = 2 * math.pi * raio
+print(f"Área: {area:.2f}")  # Resultado: Área: 78.54
+print(f"Perímetro: {perimetro:.2f}")  # Resultado: Perímetro: 31.42
+            </pre>
+            <p>47. Perímetro do triângulo</p>
+            <pre>
+lado1 = 3
+lado2 = 4
+lado3 = 5
+perimetro = lado1 + lado2 + lado3
+print(f"Perímetro: {perimetro}")  # Resultado: Perímetro: 12
+            </pre>
+        </div>
+
+        <div class="exercise-card">
+            <span class="difficulty beginner">Iniciante</span>
+            <h2>Expressões Matemáticas</h2>
+            <p>48. Número sucessor</p>
+            <pre>
+numero = 10
+sucessor = numero + 1
+print(f"Sucessor de {numero}: {sucessor}")  # Resultado: Sucessor de 10: 11
+            </pre>
+            <p>49. Expressões matemáticas</p>
+            <pre>
+expr1 = 45 + 15 * 9
+expr2 = 42 / 30 * (94 + 2) * 6 - 1
+print(f"Expressão 1: {expr1}")  # Resultado: Expressão 1: 180
+print(f"Expressão 2: {expr2}")  # Resultado: Expressão 2: 575.4
+            </pre>
+            <p>50. Expressão complexa</p>
+            <pre>
+resultado = 10 % 3 * 10 ** 2 + 1 - 10 * 4 / 2
+print(f"Resultado: {resultado}")  # Resultado: Resultado: 81.0
+            </pre>
+        </div>
+    </div>
+</body>
+</html> 
